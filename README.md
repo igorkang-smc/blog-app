@@ -25,6 +25,7 @@ pip install -r requirements.txt  # or `pip install -e .` if using a pyproject
 cp .env.example .env
 
 # 4) DB + superuser
+cd mysite
 python manage.py migrate
 python manage.py createsuperuser
 
@@ -33,5 +34,6 @@ python manage.py runserver
 ```
 
 ![img_2.png](images/img_2.png)
+![img.png](images/img4.png)
 ![img.png](images/img.png)
 ![img.png](images/img3.png)
