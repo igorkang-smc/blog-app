@@ -1,5 +1,3 @@
-![img_2.png](images/img_2.png)
-
 # Blog Application
 
 A minimal Django project you can use as a starter: clean settings, sane defaults, and the usual dev tasks (run server, migrations, tests).
@@ -32,3 +30,7 @@ python manage.py createsuperuser
 
 # 5) Run
 python manage.py runserver
+```
+
+![img_2.png](images/img_2.png)
+![img.png](images/img.png)
