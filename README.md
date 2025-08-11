@@ -61,7 +61,7 @@ docker run --name=blog_db \
   -e POSTGRES_USER=blog \
   -e POSTGRES_PASSWORD=xxxxx \
   -p 5432:5432 \
-  -d postgrescd mysite
+  -d postgres
 
 cd mysite
 python manage.py migrate
