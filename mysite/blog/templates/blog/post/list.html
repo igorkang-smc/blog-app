@@ -3,6 +3,11 @@
 {% block title %}My Blog{% endblock %}
 {% block content %}
 <h1>My Blog</h1>
+<h4>
+    <a href="{% url 'blog:post_search' %}">
+        Search
+    </a>
+</h4>
 {% if tag %}
 <h2>Posts tagged with "{{ tag.name }}"</h2>
 {% endif %}
