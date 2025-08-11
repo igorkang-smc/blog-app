@@ -62,7 +62,8 @@ docker run --name=blog_db \
   -e POSTGRES_PASSWORD=xxxxx \
   -p 5432:5432 \
   -d postgrescd mysite
-  
+
+cd mysite
 python manage.py migrate
 python manage.py createsuperuser
 
