@@ -46,14 +46,10 @@ Steps:
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-# 2) Install deps
-pip install -U pip wheel
-pip install -r requirements.txt  # or `pip install -e .` if using a pyproject
-
-# 3) Environment variables
+# 2) Environment variables
 cp .env.example .env
 
-# 4) DB + superuser
+# 3) DB + superuser
 docker pull postgres:latest
 
 docker run --name=blog_db \
@@ -64,10 +60,12 @@ docker run --name=blog_db \
   -d postgres
 
 cd mysite
+pip install -U pip wheel
+pip install -r requirements.txt  # or `pip install -e .` if using a pyproject
 python manage.py migrate
 python manage.py createsuperuser
 
-# 5) Run
+# 4) Run
 python manage.py runserver
 ```
 
