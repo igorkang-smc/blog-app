@@ -95,3 +95,14 @@ input[type=submit] {
     font-size:12px;
     color:#666;
 }
+
+.post-white {
+    background-color: #ffffff;
+    padding: 5px;
+
+}
+
+.post-grey {
+    background:#efefef;
+    padding: 5px;
+}
