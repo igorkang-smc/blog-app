@@ -15,7 +15,9 @@
           {{ post.title }}
         </a>
       </h4>
-      {{ post.body|markdown|truncatewords_html:12}}
+      <div class="post-content">
+        {{ post.body|safe }}
+      </div>
     {% empty %}
       <p>There are no results for your query.</p>
     {% endfor %}
