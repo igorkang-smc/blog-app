@@ -29,7 +29,9 @@
     <p class="date">
         Published {{ post.publish }} by {{ post.author }}
     </p>
-    {{ post.body|markdown|truncatewords_html:30 }}
+    <div class="post-preview">
+        {{ post.body|truncatewords_html:60|safe }}
+    </div>
 </div>
 {% endfor %}
 {% include "pagination.html" with page=posts %}

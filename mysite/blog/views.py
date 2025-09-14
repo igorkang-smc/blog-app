@@ -12,6 +12,10 @@ from django.contrib.postgres.search import (
     SearchQuery,
     TrigramSimilarity
 )
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.core.files.storage import default_storage
+import os
 
 
 # Create your views here.
@@ -184,3 +188,26 @@ def post_search(request):
             'results': results
         }
     )
+
+
+@csrf_exempt
+def image_upload(request):
+    if request.method == "POST" and request.FILES.get("upload"):
+        uploaded_file = request.FILES["upload"]
+
+        # Save file to S3 (uses DEFAULT_FILE_STORAGE)
+        file_name = default_storage.save(uploaded_file.name, uploaded_file)
+
+        # Get public URL
+        file_url = default_storage.url(file_name)
+
+        return JsonResponse({
+            "uploaded": 1,
+            "fileName": os.path.basename(file_name),
+            "url": file_url
+        })
+
+    return JsonResponse({
+        "uploaded": 0,
+        "error": {"message": "Upload failed"}
+    })

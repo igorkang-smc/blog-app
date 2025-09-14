@@ -97,12 +97,29 @@ input[type=submit] {
 }
 
 .post-white {
-    background-color: #ffffff;
+    background-color: #efefef;
     padding: 5px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 
 }
 
 .post-grey {
     background:#efefef;
     padding: 5px;
+}
+
+.post-preview {
+  max-height: 800px;        /* control preview height */
+  overflow: hidden;         /* cut off overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 5;    /* limit to ~5 lines */
+  -webkit-box-orient: vertical;
+}
+
+.post-content img {
+  max-width: 100%;   /* image will never be wider than its container */
+  height: auto;      /* keep aspect ratio */
+  display: block;    /* removes inline spacing issues */
+  margin: 0 auto;    /* optional: center align */
 }
